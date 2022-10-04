@@ -1,8 +1,8 @@
 {
   "name": "better-docs",
-  "version": "2.7.2",
+  "version": "2.8.0",
   "description": "JSdoc theme",
-  "repository": "github:SoftwareBrothers/better-docs",
+  "repository": "github:fictionlive/better-docs",
   "main": "publish.js",
   "scripts": {
     "gulp": "./node_modules/.bin/gulp",
