@@ -356,6 +356,18 @@ function buildMemberNav(items, itemHeading, itemsSeen, linktoFn) {
                 displayName = child.name
               }
               itemsNav += '<li>' + linktoFn(child.longname, displayName.replace(/\b(module|event):/g, '')) + '</li>'
+              if (child.children && child.children.length) {
+                itemsNav += '<ul>'
+                child.children.forEach(child => {
+                  if (env.conf.templates.default.useLongnameInNav) {
+                    displayName = child.longname
+                  } else {
+                    displayName = child.name
+                  }
+                  itemsNav += '<li>' + linktoFn(child.longname, displayName.replace(/\b(module|event):/g, '')) + '</li>'
+                })
+                itemsNav += '</ul>'
+              }
             })
             itemsNav += '</ul>'
           }
@@ -396,7 +408,7 @@ function buildGroupNav (members, title) {
   if (title) {
     nav += '<h2>' + title + '</h2>'
   }
-  nav += buildMemberNav(members.tutorials || [], 'Tutorials', seenTutorials, linktoTutorial)
+  nav += buildMemberNav(members.tutorials || [], env.conf.templates.betterDocs.tutorialName || 'Tutorial', seenTutorials, linktoTutorial)
   nav += buildMemberNav(members.modules || [], 'Modules', {}, linkto)
   nav += buildMemberNav(members.externals || [], 'Externals', seen, linktoExternal)
   nav += buildMemberNav(members.namespaces || [], 'Namespaces', seen, linkto)
@@ -790,7 +802,7 @@ exports.publish = function(taffyData, opts, tutorials) {
       subtitle: subtitle,
       header: tutorial.title,
       content: tutorial.parse(),
-      children: tutorial.children
+      children: tutorial.children,
     }
     var tutorialPath = path.join(outdir, filename)
     var html = view.render('tutorial.tmpl', tutorialData)
