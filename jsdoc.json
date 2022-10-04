@@ -29,7 +29,8 @@
     },
     "templates": {
         "better-docs": {
-            "name": "Sample Documentation"
+            "name": "Sample Documentation",
+            "tutorialName": "Tutorials"
         }
     }
 }
