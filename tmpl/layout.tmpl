@@ -23,7 +23,7 @@ var search = env.conf.templates && env.conf.templates.search
     <?js= this.partial('topnav.tmpl', { betterDocs }) ?>
     <div id="main">
         <div
-            class="sidebar <?js= isTutorial ? 'tutorials' : '' ?>"
+            class="sidebar <?js= isTutorial ? betterDocs.tutorialName : '' ?>"
             id="sidebarNav"
         >
             <?js if(search) { ?>
