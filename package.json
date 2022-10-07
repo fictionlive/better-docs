@@ -1,7 +1,7 @@
 {
   "name": "better-docs",
-  "version": "2.8.3",
-  "description": "JSdoc theme",
+  "version": "2.8.4",
+  "description": "JSdoc theme - modified for fiction.live",
   "repository": "github:fictionlive/better-docs",
   "main": "publish.js",
   "scripts": {

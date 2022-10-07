@@ -17,11 +17,31 @@
     font-size: 12px
     text-transform: uppercase
   ul
-    padding: 0 0 rem(4px) rem(16px)
+    a
+      display: block
+      width: 100%
+      padding: rem(5px) 0
+      &:hover, &.active
+        background: $border
+    padding: 0 0 rem(4px) 0
     li
-      padding: rem(3px) 0
+      padding: 0 0
   li > ul
-    padding: 0 0 0px 25px
+    padding: 0 0 0px 0
+  .category > ul
+    margin: 0 rem(-30px)
+    a
+      padding-left: rem(30px)
+    ul
+      a
+        padding-left: rem(45px)
+      ul
+        a
+          padding-left: rem(60px)
+        ul
+          a
+            padding-left: rem(75px)
+
 
   .category
     h2
