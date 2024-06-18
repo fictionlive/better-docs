@@ -2,6 +2,11 @@
     var self = this;
     var isGlobalPage;
 
+    // kas: This seems to fix a bug where member sections gets duplicated on a page, but I don't understand the codebase enough to know if this has any side-effects.
+    if (docs.length > 1) {
+        docs = [docs[0]]
+    }
+
     docs.forEach(function(doc, i) {
 ?>
 
